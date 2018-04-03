@@ -1,7 +1,7 @@
 package priv.shen;
 
-import factory.AutoCapableBeanFactory;
-import factory.BeanFactory;
+import priv.shen.factory.AutoCapableBeanFactory;
+import priv.shen.factory.BeanFactory;
 import org.junit.Test;
 import priv.shen.beanDefinition.BeanDefinition;
 import priv.shen.beanDefinition.PropertyValue;

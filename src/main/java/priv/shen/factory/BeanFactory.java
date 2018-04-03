@@ -1,4 +1,4 @@
-package factory;
+package priv.shen.factory;
 
 import priv.shen.beanDefinition.BeanDefinition;
 
