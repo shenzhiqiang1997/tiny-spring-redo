@@ -10,6 +10,9 @@ public class BeanDefinition {
     //bean属性
     private PropertyValues propertyValues;
 
+    public BeanDefinition(){
+        propertyValues=new PropertyValues();
+    }
     public Object getBean() {
         return bean;
     }
