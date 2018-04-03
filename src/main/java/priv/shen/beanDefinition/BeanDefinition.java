@@ -1,15 +1,14 @@
-package priv.shen;
+package priv.shen.beanDefinition;
 
 /**
- * bean定义相关信息 包含bean实例
+ * bean定义 包含bean实例和bean相关信息
  */
 public class BeanDefinition {
-    //bean实例
     private Object bean;
-    //bean对应的Class
     private Class beanClass;
-    //bean对应Class的名称
     private String beanClassName;
+    //bean属性
+    private PropertyValues propertyValues;
 
     public Object getBean() {
         return bean;
@@ -33,11 +32,19 @@ public class BeanDefinition {
 
     public void setBeanClassName(String beanClassName) {
         this.beanClassName = beanClassName;
-        //在确定了bean对应Class的全限定名之后就可以加载该类并获得对应Class对象
+        //得到bean类的全限定名之后将bean的类加载
         try {
             this.beanClass=Class.forName(beanClassName);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public PropertyValues getPropertyValues() {
+        return propertyValues;
+    }
+
+    public void setPropertyValues(PropertyValues propertyValues) {
+        this.propertyValues = propertyValues;
     }
 }

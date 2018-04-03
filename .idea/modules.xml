@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tiny-spring-zero.iml" filepath="$PROJECT_DIR$/tiny-spring-zero.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tiny-spring-redo.iml" filepath="$PROJECT_DIR$/tiny-spring-redo.iml" />
     </modules>
   </component>
 </project>

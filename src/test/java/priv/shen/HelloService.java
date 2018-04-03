@@ -1,7 +1,8 @@
 package priv.shen;
 
 public class HelloService {
-    public void helloWorld(){
-        System.out.println("Hello World!");
+    private String text;
+    public void hello(){
+        System.out.println(text);
     }
 }
