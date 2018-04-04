@@ -30,7 +30,7 @@ public abstract class AbstractBeanFactory implements BeanFactory{
         return bean;
     }
 
-    @Override
+
     public void registerBeanDefinition(String name,BeanDefinition beanDefinition) throws Exception{
         //先创建bean再将bean放置到map中
         beanDefinitionMap.put(name,beanDefinition);
