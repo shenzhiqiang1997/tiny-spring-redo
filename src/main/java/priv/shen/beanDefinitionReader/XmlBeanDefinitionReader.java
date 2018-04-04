@@ -2,6 +2,7 @@ package priv.shen.beanDefinitionReader;
 
 import org.w3c.dom.*;
 import priv.shen.beanDefinition.BeanDefinition;
+import priv.shen.beanDefinition.BeanReference;
 import priv.shen.beanDefinition.PropertyValue;
 import priv.shen.beanDefinition.PropertyValues;
 import priv.shen.resource.ResourceLoader;
@@ -83,8 +84,21 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
             if (node instanceof Element){
                 Element propertyElement=(Element)node;
                 String name=propertyElement.getAttribute("name");
-                Object value=propertyElement.getAttribute("value");
-                beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name,value));
+                String value=propertyElement.getAttribute("value");
+                //正常情况下直接读入属性
+                if (value!=null&&value.length()>0){
+                    beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name,value));
+                }else{
+                    //如果是引用的bean则读取引用的bean信息
+                    String ref=propertyElement.getAttribute("ref");
+                    if (ref==null||ref.length()==0){
+                        throw new IllegalArgumentException("error:property "+name+" must be set a value or ref");
+                    }
+
+                    BeanReference beanReference=new BeanReference(ref);
+                    beanDefinition.getPropertyValues().addPropertyValue(new PropertyValue(name,beanReference));
+                }
+
             }
         }
     }

@@ -1,6 +1,7 @@
 package priv.shen.factory;
 
 import priv.shen.beanDefinition.BeanDefinition;
+import priv.shen.beanDefinition.BeanReference;
 import priv.shen.beanDefinition.PropertyValue;
 
 import java.lang.reflect.Field;
@@ -13,6 +14,7 @@ public class AutoCapableBeanFactory extends AbstractBeanFactory {
     public Object doCreateBean(BeanDefinition beanDefinition) throws Exception {
         Object bean=createBeanInstance(beanDefinition);
         applyPropertyValues(bean,beanDefinition);
+        beanDefinition.setBean(bean);
         return bean;
     }
 
@@ -28,8 +30,14 @@ public class AutoCapableBeanFactory extends AbstractBeanFactory {
             Field beanField = bean.getClass().getDeclaredField(propertyValue.getName());
             //允许通过反射访问属性
             beanField.setAccessible(true);
+            Object value=propertyValue.getValue();
+            //如果是引用的bean则要先实例化bean
+            if (value instanceof BeanReference){
+               BeanReference beanReference=(BeanReference)value;
+               value=getBean(beanReference.getName());
+            }
             //将属性注入到bean实例中
-            beanField.set(bean,propertyValue.getValue());
+            beanField.set(bean,value);
         }
     }
 }

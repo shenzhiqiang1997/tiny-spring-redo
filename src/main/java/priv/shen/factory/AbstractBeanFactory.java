@@ -23,7 +23,6 @@ public abstract class AbstractBeanFactory implements BeanFactory{
     public void registerBeanDefinition(String name,BeanDefinition beanDefinition) throws Exception{
         //先创建bean再将bean放置到map中
         Object bean=doCreateBean(beanDefinition);
-        beanDefinition.setBean(bean);
         beanDefinitionMap.put(name,beanDefinition);
     }
 
