@@ -2,6 +2,7 @@ package priv.shen;
 
 import priv.shen.beanDefinitionReader.BeanDefinitionReader;
 import priv.shen.beanDefinitionReader.XmlBeanDefinitionReader;
+import priv.shen.factory.AbstractBeanFactory;
 import priv.shen.factory.AutoCapableBeanFactory;
 import priv.shen.factory.BeanFactory;
 import org.junit.Test;
@@ -17,7 +18,7 @@ public class BeanFactoryTest {
     @Test
     public void test() throws Exception{
         //创建bean工厂
-        BeanFactory factory=new AutoCapableBeanFactory();
+        AbstractBeanFactory factory=new AutoCapableBeanFactory();
 
         //创建资源加载器
         ResourceLoader resourceLoader=new UrlResourceLoader();
@@ -34,6 +35,9 @@ public class BeanFactoryTest {
              register.entrySet()) {
             factory.registerBeanDefinition(entry.getKey(),entry.getValue());
         }
+
+        factory.preInstantiateSingletons();
+
 
         //获取bean
         HelloService helloService= (HelloService) factory.getBean("helloService");

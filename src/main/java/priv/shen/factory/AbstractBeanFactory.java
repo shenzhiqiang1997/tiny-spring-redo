@@ -15,15 +15,33 @@ public abstract class AbstractBeanFactory implements BeanFactory{
             = new ConcurrentHashMap<>();
 
     @Override
-    public Object getBean(String name) {
-        return beanDefinitionMap.get(name).getBean();
+    public Object getBean(String name) throws Exception {
+
+        BeanDefinition beanDefinition = beanDefinitionMap.get(name);
+        if (beanDefinition==null)
+            throw new IllegalArgumentException("error:bean named "+name+"is not defined");
+
+        //实现懒加载 如果不存在bean实例再加载
+        Object bean=beanDefinition.getBean();
+
+        if (bean==null) {
+            bean = doCreateBean(beanDefinition);
+        }
+        return bean;
     }
 
     @Override
     public void registerBeanDefinition(String name,BeanDefinition beanDefinition) throws Exception{
         //先创建bean再将bean放置到map中
-        Object bean=doCreateBean(beanDefinition);
         beanDefinitionMap.put(name,beanDefinition);
+    }
+
+    //不选择懒加载 而是提前创建并注入所有需要注入的bean
+    public void preInstantiateSingletons() throws Exception {
+        for (String name:
+             beanDefinitionMap.keySet()) {
+            getBean(name);
+        }
     }
 
     public abstract Object doCreateBean(BeanDefinition beanDefinition) throws Exception;
