@@ -1,4 +1,4 @@
-package priv.shen.beanDefinition;
+package priv.shen.beans.beanDefinition;
 
 /**
  * bean属性

@@ -1,7 +1,7 @@
-package priv.shen.beanDefinitionReader;
+package priv.shen.beans.beanDefinitionReader;
 
-import priv.shen.beanDefinition.BeanDefinition;
-import priv.shen.resource.ResourceLoader;
+import priv.shen.beans.beanDefinition.BeanDefinition;
+import priv.shen.beans.resource.ResourceLoader;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

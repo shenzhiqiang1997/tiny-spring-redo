@@ -1,8 +1,8 @@
-package priv.shen.factory;
+package priv.shen.beans.factory;
 
-import priv.shen.beanDefinition.BeanDefinition;
-import priv.shen.beanDefinition.BeanReference;
-import priv.shen.beanDefinition.PropertyValue;
+import priv.shen.beans.beanDefinition.BeanDefinition;
+import priv.shen.beans.beanDefinition.BeanReference;
+import priv.shen.beans.beanDefinition.PropertyValue;
 
 import java.lang.reflect.Field;
 

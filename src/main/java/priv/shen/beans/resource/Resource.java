@@ -1,4 +1,4 @@
-package priv.shen.resource;
+package priv.shen.beans.resource;
 
 import java.io.InputStream;
 

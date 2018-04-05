@@ -1,6 +1,6 @@
-package priv.shen.factory;
+package priv.shen.beans.factory;
 
-import priv.shen.beanDefinition.BeanDefinition;
+import priv.shen.beans.beanDefinition.BeanDefinition;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

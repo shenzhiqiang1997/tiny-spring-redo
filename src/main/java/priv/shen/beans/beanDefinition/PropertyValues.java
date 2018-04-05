@@ -1,4 +1,4 @@
-package priv.shen.beanDefinition;
+package priv.shen.beans.beanDefinition;
 
 import java.util.ArrayList;
 import java.util.List;

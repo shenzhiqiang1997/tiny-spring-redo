@@ -1,7 +1,7 @@
 package priv.shen.context;
 
-import priv.shen.beanDefinitionReader.AbstractBeanDefinitionReader;
-import priv.shen.factory.AbstractBeanFactory;
+import priv.shen.beans.beanDefinitionReader.AbstractBeanDefinitionReader;
+import priv.shen.beans.factory.AbstractBeanFactory;
 
 /**
  * 抽象应用上下文

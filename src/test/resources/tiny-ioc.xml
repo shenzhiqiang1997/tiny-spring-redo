@@ -10,7 +10,7 @@
 
     <bean name="outputService" class="priv.shen.OutputService"></bean>
 
-    <bean name="helloService" class="priv.shen.HelloService">
+    <bean name="helloService" class="priv.shen.HelloServiceImpl">
         <property name="text" value="Hello World!"></property>
         <property name="outputService" ref="outputService"></property>
     </bean>

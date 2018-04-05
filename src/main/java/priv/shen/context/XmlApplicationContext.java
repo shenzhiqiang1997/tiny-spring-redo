@@ -1,9 +1,9 @@
 package priv.shen.context;
 
-import priv.shen.beanDefinition.BeanDefinition;
-import priv.shen.beanDefinitionReader.XmlBeanDefinitionReader;
-import priv.shen.factory.AutoCapableBeanFactory;
-import priv.shen.resource.UrlResourceLoader;
+import priv.shen.beans.beanDefinition.BeanDefinition;
+import priv.shen.beans.beanDefinitionReader.XmlBeanDefinitionReader;
+import priv.shen.beans.factory.AutoCapableBeanFactory;
+import priv.shen.beans.resource.UrlResourceLoader;
 
 import java.util.Map;
 

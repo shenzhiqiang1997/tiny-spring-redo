@@ -1,6 +1,4 @@
-package priv.shen.factory;
-
-import priv.shen.beanDefinition.BeanDefinition;
+package priv.shen.beans.factory;
 
 /**
  * bean工厂 定义获得bean和注册bean的规范

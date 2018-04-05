@@ -1,16 +1,14 @@
-package priv.shen;
+package priv.shen.beans;
 
-import priv.shen.beanDefinitionReader.BeanDefinitionReader;
-import priv.shen.beanDefinitionReader.XmlBeanDefinitionReader;
-import priv.shen.factory.AbstractBeanFactory;
-import priv.shen.factory.AutoCapableBeanFactory;
-import priv.shen.factory.BeanFactory;
+import priv.shen.HelloServiceImpl;
+import priv.shen.beans.beanDefinitionReader.BeanDefinitionReader;
+import priv.shen.beans.beanDefinitionReader.XmlBeanDefinitionReader;
+import priv.shen.beans.factory.AbstractBeanFactory;
+import priv.shen.beans.factory.AutoCapableBeanFactory;
 import org.junit.Test;
-import priv.shen.beanDefinition.BeanDefinition;
-import priv.shen.beanDefinition.PropertyValue;
-import priv.shen.beanDefinition.PropertyValues;
-import priv.shen.resource.ResourceLoader;
-import priv.shen.resource.UrlResourceLoader;
+import priv.shen.beans.beanDefinition.BeanDefinition;
+import priv.shen.beans.resource.ResourceLoader;
+import priv.shen.beans.resource.UrlResourceLoader;
 
 import java.util.Map;
 
@@ -40,7 +38,7 @@ public class BeanFactoryTest {
 
 
         //获取bean
-        HelloService helloService= (HelloService) factory.getBean("helloService");
+        HelloServiceImpl helloService= (HelloServiceImpl) factory.getBean("helloService");
         helloService.hello();
     }
 }

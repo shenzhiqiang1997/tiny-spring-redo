@@ -1,4 +1,4 @@
-package priv.shen.resource;
+package priv.shen.beans.resource;
 
 /**
  * 资源加载接口

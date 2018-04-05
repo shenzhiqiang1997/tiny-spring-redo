@@ -1,4 +1,4 @@
-package priv.shen.beanDefinition;
+package priv.shen.beans.beanDefinition;
 
 /**
  * bean定义 包含bean实例和bean相关信息

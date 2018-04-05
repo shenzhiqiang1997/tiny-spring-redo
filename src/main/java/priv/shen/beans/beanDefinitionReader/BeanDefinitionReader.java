@@ -1,4 +1,4 @@
-package priv.shen.beanDefinitionReader;
+package priv.shen.beans.beanDefinitionReader;
 
 /**
  * bean定义加载接口

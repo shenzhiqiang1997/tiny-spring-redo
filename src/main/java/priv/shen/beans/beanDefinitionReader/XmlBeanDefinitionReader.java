@@ -1,11 +1,10 @@
-package priv.shen.beanDefinitionReader;
+package priv.shen.beans.beanDefinitionReader;
 
 import org.w3c.dom.*;
-import priv.shen.beanDefinition.BeanDefinition;
-import priv.shen.beanDefinition.BeanReference;
-import priv.shen.beanDefinition.PropertyValue;
-import priv.shen.beanDefinition.PropertyValues;
-import priv.shen.resource.ResourceLoader;
+import priv.shen.beans.beanDefinition.BeanDefinition;
+import priv.shen.beans.beanDefinition.BeanReference;
+import priv.shen.beans.beanDefinition.PropertyValue;
+import priv.shen.beans.resource.ResourceLoader;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
