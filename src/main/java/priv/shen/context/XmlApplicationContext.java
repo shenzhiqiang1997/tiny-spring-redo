@@ -2,6 +2,7 @@ package priv.shen.context;
 
 import priv.shen.beans.beanDefinition.BeanDefinition;
 import priv.shen.beans.beanDefinitionReader.XmlBeanDefinitionReader;
+import priv.shen.beans.factory.AbstractBeanFactory;
 import priv.shen.beans.factory.AutoCapableBeanFactory;
 import priv.shen.beans.resource.UrlResourceLoader;
 
@@ -23,12 +24,12 @@ public class XmlApplicationContext extends AbstractApplicationContext {
 
 
     @Override
-    public void refresh() throws Exception {
+    protected void loadBeanDefinitions(AbstractBeanFactory beanFactory) throws Exception {
         //从xml配置文件中加载bean定义
         beanDefinitionReader.loadBeanDefinitions(configurationLocation);
         //根据bean定义调用bean工厂创建bean实例
         for (Map.Entry<String,BeanDefinition> beanDefinitionEntry:
-            beanDefinitionReader.getRegister().entrySet()) {
+                beanDefinitionReader.getRegister().entrySet()) {
             //注册所有的bean定义
             beanFactory.registerBeanDefinition(beanDefinitionEntry.getKey(),
                     beanDefinitionEntry.getValue());

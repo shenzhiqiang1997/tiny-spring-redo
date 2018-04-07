@@ -15,5 +15,6 @@
         <property name="outputService" ref="outputService"></property>
     </bean>
 
+    <bean name="beanPostProcessorLogger" class="priv.shen.BeanPostProcessorLogger"></bean>
 
 </beans>
