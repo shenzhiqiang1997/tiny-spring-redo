@@ -9,11 +9,19 @@ import org.aopalliance.intercept.MethodInterceptor;
 public class AdvisedSupport {
     private TargetSource targetSource;
     private MethodInterceptor methodInterceptor;
+    private MethodMatcher methodMatcher;
 
-    public AdvisedSupport(TargetSource targetSource,MethodInterceptor methodInterceptor){
-        this.targetSource=targetSource;
-        this.methodInterceptor=methodInterceptor;
+    public AdvisedSupport(TargetSource targetSource, MethodInterceptor methodInterceptor) {
+        this.targetSource = targetSource;
+        this.methodInterceptor = methodInterceptor;
     }
+
+    public AdvisedSupport(TargetSource targetSource, MethodInterceptor methodInterceptor, MethodMatcher methodMatcher) {
+        this.targetSource = targetSource;
+        this.methodInterceptor = methodInterceptor;
+        this.methodMatcher = methodMatcher;
+    }
+
 
     public TargetSource getTargetSource() {
         return targetSource;
@@ -21,5 +29,9 @@ public class AdvisedSupport {
 
     public MethodInterceptor getMethodInterceptor() {
         return methodInterceptor;
+    }
+
+    public MethodMatcher getMethodMatcher() {
+        return methodMatcher;
     }
 }

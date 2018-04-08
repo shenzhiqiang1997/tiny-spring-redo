@@ -12,7 +12,7 @@ public class JdkDynamicAopProxyTest {
         ApplicationContext applicationContext=new XmlApplicationContext("tiny-ioc.xml");
         HelloService helloService= (HelloService) applicationContext.getBean("helloService");
 
-        TargetSource targetSource=new TargetSource(helloService,HelloService.class);
+        TargetSource targetSource=new TargetSource(helloService,helloService.getClass().getInterfaces());
         JdkDynamicAopProxy jdkDynamicAopProxy=new JdkDynamicAopProxy(new AdvisedSupport(targetSource,new TimerInterceptor()));
 
         HelloService helloServiceProxy= (HelloService) jdkDynamicAopProxy.getProxy();
